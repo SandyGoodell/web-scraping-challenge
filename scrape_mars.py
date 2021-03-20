@@ -9,10 +9,11 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import requests
 import time
+import pymongo
 
 def init_browser():
     executable_path = {"executable_path": "C:/Users/sgoodel3/.wdm/drivers/chromedriver/win32/88.0.4324.96/chromedriver"}
-    browser = Browser("chrome", **executable_path, headless=False)
+    return Browser("chrome", **executable_path, headless=False)
 
 def scrape():
     browser = init_browser()
@@ -52,8 +53,8 @@ def scrape():
 
     html = browser.html
     image_soup = BeautifulSoup(html, 'html.parser')
-    # print(html)
-    # print(image_soup.prettify())
+    print(html)
+    print(image_soup.prettify())
 
 
  
@@ -63,8 +64,8 @@ def scrape():
     # image_base_url = 'https://www.jpl.nasa.gov'
     featured_image_url = image_url
 
-    #print(url)
-    #print(featured_image_url)
+    print(url)
+    print(featured_image_url)
 
 
     # ### Mars Facts ###
@@ -144,9 +145,8 @@ def scrape():
             "fact_table": str(mars_html_table),
             "hemisphere_images": hemisphere_image_urls
         }
-
-    mars_dict
-
     browser.quit()
+    print(mars_dict)
     return
-if __name__ == "__main__":
+init_browser()
+scrape()

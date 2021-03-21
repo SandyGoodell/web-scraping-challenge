@@ -27,8 +27,8 @@ def scrape():
 
     html = browser.html
     news_soup = BeautifulSoup(html, 'html.parser')
-    # print(html)
-    # print(news_soup.prettify())
+    print(html)
+    print(news_soup.prettify())
 
     # Assign variables for what we are scrapping (New's Title and Paragraph)
     # Retrieve the latest news title and paragraph

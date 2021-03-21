@@ -27,8 +27,8 @@ def scrape():
 
     html = browser.html
     news_soup = BeautifulSoup(html, 'html.parser')
-    print(html)
-    print(news_soup.prettify())
+    #print(html)
+    #print(news_soup.prettify())
 
     # Assign variables for what we are scrapping (New's Title and Paragraph)
     # Retrieve the latest news title and paragraph
@@ -36,9 +36,9 @@ def scrape():
     news_title = news_title.find(class_="content_title").text
     news_para = news_soup.find_all("div", class_="article_teaser_body")[0].text
 
-    print(news_title)
-    print("--------------------------------------------------------------------")
-    print(news_para)
+    #print(news_title)
+    #print("--------------------------------------------------------------------")
+    #print(news_para)
 
 
     # ### JPL Mars Space Images - Featured Image ###
@@ -52,9 +52,8 @@ def scrape():
 
 
     html = browser.html
-    image_soup = BeautifulSoup(html, 'html.parser')
-    print(html)
-    print(image_soup.prettify())
+    featured_image_url = BeautifulSoup(html, 'html.parser')
+   # print(featured_image_url.prettify())
 
 
  
@@ -62,10 +61,10 @@ def scrape():
     # combine base url with partial url
     # Website Url 
     # image_base_url = 'https://www.jpl.nasa.gov'
-    featured_image_url = image_url
+    # featured_image_url = image_url
 
-    print(url)
-    print(featured_image_url)
+    # print(url)
+    # print(featured_image_url)
 
 
     # ### Mars Facts ###
@@ -83,7 +82,7 @@ def scrape():
 
     # saving as html table format
     mars_html_table = mars_facts.to_html()
-    print(mars_html_table)
+    # print(mars_html_table)
 
     mars_html_table = mars_html_table.replace('\n', '')
 
@@ -98,7 +97,7 @@ def scrape():
 
     hemispheres_soup = BeautifulSoup(hemispheres_html, 'html.parser')
 
-    print(hemispheres_soup.prettify())
+    # print(hemispheres_soup.prettify())
 
     hem_img = hemispheres_soup.find_all('div', class_= 'item')
 
@@ -147,6 +146,4 @@ def scrape():
         }
     browser.quit()
     print(mars_dict)
-    return
-init_browser()
-scrape()
+    return mars_dict

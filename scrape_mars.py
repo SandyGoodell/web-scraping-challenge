@@ -51,13 +51,9 @@ def scrape():
    # browser.click_link_by_partial_text('FULL IMAGE')
 
 
-   # html = browser.html
-   # featured_image_url = BeautifulSoup(html, 'html.parser')
-   # print(featured_image_url.prettify())
-
-
- 
-
+    # html = browser.html
+    # featured_image_url = BeautifulSoup(html, 'html.parser')
+    # print(featured_image_url.prettify())
     # combine base url with partial url
     # Website Url 
     # image_base_url = 'https://www.jpl.nasa.gov'

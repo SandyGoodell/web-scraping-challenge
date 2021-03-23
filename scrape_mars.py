@@ -44,15 +44,15 @@ def scrape():
     # ### JPL Mars Space Images - Featured Image ###
 
 
-    image_url = 'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html'
+    # image_url = 'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html'
 
-    time.sleep(10)
-    browser.visit(image_url)
-    browser.click_link_by_partial_text('FULL IMAGE')
+   # time.sleep(10)
+   # browser.visit(image_url)
+   # browser.click_link_by_partial_text('FULL IMAGE')
 
 
-    html = browser.html
-    featured_image_url = BeautifulSoup(html, 'html.parser')
+   # html = browser.html
+   # featured_image_url = BeautifulSoup(html, 'html.parser')
    # print(featured_image_url.prettify())
 
 
@@ -140,7 +140,7 @@ def scrape():
     mars_dict = {
             "news_title": news_title,
             "news_para": news_para,
-            "featured_image_url": featured_image_url,
+            # "featured_image_url": featured_image_url,
             "fact_table": str(mars_html_table),
             "hemisphere_images": hemisphere_image_urls
         }
